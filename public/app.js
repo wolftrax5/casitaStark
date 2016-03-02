@@ -2,11 +2,18 @@
 /* global _, io, window, hexToRgb */
 const socket = io.connect(window.location.origin)
 
-const ledboton = document.getElementById('led')
+const leds = document.querySelectorAll(".led")
 
 const debounceClick = function (event){
 
-	console.log(socket.emit('click',1))
+	socket.emit('click',event.target.value)
 }
 
-ledboton.addEventListener('click',debounceClick)
+function addEvent (){
+	for (var i = 0; i < leds.length; i++) 
+	    leds[i].addEventListener('click',debounceClick)
+	
+}
+
+addEvent();
+
