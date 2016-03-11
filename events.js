@@ -6,13 +6,18 @@ const onStartSocket = (devices, socket) => {
   	devices.leds[value].toggle();
 
   	devices.lm35.on("data", function() {
-    	 if (this.celsius > 27) {
-    	 	console.log("mayor de 27")
+
+    	 if (this.celsius > 100) {
+    	 	console.log("si:" + this.celsius)
     	 	devices.motor.start();
     	 }else{
+    	 	console.log('no:' + this.celsius);
     	 	devices.motor.stop();
     	 }
   	});
+  	//devices.photo.on("data", function() {
+    //		console.log(devices.photo.value);
+ 	//});
   	
   })
 }
