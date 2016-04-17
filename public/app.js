@@ -6,13 +6,21 @@ const leds = document.querySelectorAll(".led")
 
 const debounceClick = function (event){
 
-	socket.emit('click',event.target.value)
+	socket.emit('click',event.target.value,event.target.data_open)
 }
 
 function addEvent (){
 	for (var i = 0; i < leds.length; i++) 
 	    leds[i].addEventListener('click',debounceClick)
 	
+}
+
+function changePu (event){
+	if (event.target.value != 'PUERTA1') {
+		event.target.value = 'PUERTA1';
+	}else{
+		event.target.value = 'PUERTA0';
+	}
 }
 
 addEvent();
