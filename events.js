@@ -23,19 +23,20 @@ if ( value.indexOf('PUERTA') == -1 )  {
 
   }
 
-  	// devices.lm35.on("data", function() {
+  	devices.lm35.on("data", function() {
 
-   //  	 // if (this.celsius > 100) {
-   //  	 // 	console.log("si:" + this.celsius)
-   //  	 // 	devices.motor.start();
-   //  	 // }else{
-   //  	 // 	console.log('no:' + this.celsius);
-   //  	 // 	devices.motor.stop();
-   //  	 // }
-  	// });
-  	//devices.photo.on("data", function() {
-    //		console.log(devices.photo.value);
- 	//});
+    	 if (this.celsius > 100) {
+    	 	console.log("si:" + this.celsius)
+    	 	devices.motor.start();
+    	 }else{
+    	 	console.log('no:' + this.celsius);
+    	 	devices.motor.stop();
+    	 }
+  	});
+  	
+  // 	devices.photo.on("data", function() {
+  //   		console.log(devices.photo.value);
+ 	// });
 
   })
 }

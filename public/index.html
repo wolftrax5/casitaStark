@@ -10,10 +10,11 @@
       <input class="led" type="button" value="0">
       <input class="led" type="button" value="1">
       <input class="led" type="button" value="2">
-      <input class="led" type="button" value="3">
-      <input class="led" type="button" value="4">
       <input class="led" type="button" onclick="changePu(event)" value="PUERTA0" >
     </div>
+
+    <input id="text" type="text" placeholder="Text me..." maxlength="16">
+    <input id="brightness" type="range" name="brightness" min="0" max="255" step ="5" value ="0">
     </div>
     <label id='lm35'></label>
     <script src="/socket.io/socket.io.js"></script>
